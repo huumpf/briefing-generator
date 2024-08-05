@@ -3,22 +3,27 @@
   src: url("fonts/f37sonicbold.woff") format('woff');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Inter, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: white;
   background: url('img/swoosh.jpg') center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
   font-family: Sonic;
   font-weight: bold;
+  text-align: center;
 }
 
-h1 {
+h1, h2 {
   font-size: 2rem;
-  text-align: center;
 }
 
 header {
@@ -42,10 +47,12 @@ nav ul li {
 }
 
 main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  height: 80vh
+  max-width: 1280px;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step {
@@ -59,13 +66,13 @@ main {
 form {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  width: 100%
 }
 
 input[type="url"] {
-  flex-grow: 1;
   height: 96px;
-  width: 10rem;
+  flex-grow: 1;
+  width: 800px;
   padding: 0 2.5rem;
   font-size: 1.5rem;
   border: 1px solid #ccc;
@@ -73,10 +80,17 @@ input[type="url"] {
   background: none;
 }
 
+@media (max-width: 800px) {
+  input {
+    width: 100%;
+  }
+}
+
 button {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
   height: 66px;
   width: 66px;
   margin-left: -86px;
@@ -108,21 +122,24 @@ button:hover {
 }
 
 #briefing-ideas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 24px;
+  margin-top: 36px;
 }
 
 .briefing-idea {
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-radius: 4px;
+  background-color: transparent;
+  max-width: 314px;
+  flex-grow: 1;
+  padding: 36px 48px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: background-color 300ms;
 }
 
 .briefing-idea:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(54, 5, 135, 0.04);
 }
 
 #full-briefing {

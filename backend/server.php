@@ -162,6 +162,7 @@ function analyzeWebsite($url) {
         // Parse the analysis response
         $analysisResult = [
             'product' => '',
+            'productName' => '',
             'targetAudience' => '',
             'callToAction' => '',
             'recommendedChannels' => '',
@@ -169,6 +170,9 @@ function analyzeWebsite($url) {
         
         if (preg_match('/Produkt\/Dienstleistung:?\s*(.+?)(?:\n|$)/i', $analysis, $match)) {
             $analysisResult['product'] = cleanString(trim($match[1]));
+        }
+        if (preg_match('/Produktname:?\s*(.+?)(?:\n|$)/i', $analysis, $match)) {
+            $analysisResult['productName'] = cleanString(trim($match[1]));
         }
         if (preg_match('/Zielgruppe:?\s*(.+?)(?:\n|$)/i', $analysis, $match)) {
             $analysisResult['targetAudience'] = cleanString(trim($match[1]));

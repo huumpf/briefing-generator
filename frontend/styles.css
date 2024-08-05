@@ -26,6 +26,11 @@ h1, h2 {
   font-size: 2rem;
 }
 
+.extracting {
+  text-align: center;
+  margin-top: 20px;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -75,9 +80,15 @@ input[type="url"] {
   width: 800px;
   padding: 0 2.5rem;
   font-size: 1.5rem;
-  border: 1px solid #ccc;
   border-radius: 999px;
   background: none;
+  border: 1px solid #ccc;
+  transition: border 300ms;
+}
+
+input:focus {
+  background: none;
+  border: 1px solid #6029CD;
 }
 
 @media (max-width: 800px) {
@@ -112,8 +123,8 @@ button:hover {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #6c5ce7;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 1rem auto;
+  animation: spin 1.5s ease-in-out infinite;
+  margin: 1rem auto 2rem;
 }
 
 @keyframes spin {

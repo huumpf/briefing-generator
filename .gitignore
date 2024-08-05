@@ -1,0 +1,11 @@
+# Ignore .env file
+.env
+
+# Andere typische Einträge für Node.js-Projekte
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
